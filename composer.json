@@ -1,27 +1,36 @@
 {
     "name": "berkayk/onesignal-laravel",
-    "description": "OneSignal Push Wrapper Laravel",
+    "description": "OneSignal Push Notification API Wrapper for Laravel",
     "keywords": [
         "onesignal",
         "webpush",
         "push",
         "laravel",
-        "laravel 5"
+        "notifications"
     ],
     "type": "library",
     "require": {
-        "php": ">=5.4.0",
-        "guzzlehttp/guzzle": "^6.2|^7.4.1|^7.2",
-        "illuminate/support": "~5.5|~6.0|~7.0|~8.0|~9.0|^10.0|^11.0|^12.0",
-        "symfony/psr-http-message-bridge": "1.*|2.*|^7.0"
+        "php": "^8.3",
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/support": "^11.0|^12.0|^13.0"
     },
     "require-dev": {
-        "vlucas/phpdotenv": "^2.2|^5.5"
+        "pestphp/pest": "^3.0",
+        "orchestra/testbench": "^9.0|^10.0",
+        "mockery/mockery": "^1.6"
     },
     "autoload": {
         "psr-4": {
             "Berkayk\\OneSignal\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Berkayk\\OneSignal\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest"
     },
     "extra": {
         "laravel": {
@@ -46,5 +55,10 @@
         }
     ],
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }

@@ -4,10 +4,13 @@ namespace Berkayk\OneSignal;
 
 use Illuminate\Support\Facades\Facade;
 
-class OneSignalFacade extends Facade {
-
-    protected static function getFacadeAccessor() {
+/**
+ * @mixin \Berkayk\OneSignal\OneSignal
+ */
+class OneSignalFacade extends Facade
+{
+    protected static function getFacadeAccessor(): string
+    {
         return 'onesignal';
     }
-
 }
